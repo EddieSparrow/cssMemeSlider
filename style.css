@@ -1,0 +1,62 @@
+/* .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    display: none;
+}
+
+.img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: auto;
+}
+
+button {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: blueviolet;
+    border: none;
+    cursor: pointer;
+}
+
+.text-and-buttons {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p {
+    display: none;
+} */
+
+.meme-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    max-width: 100%;
+    display: none;
+}
+
+.button {
+    cursor: pointer;
+}
+
+#mem1:checked ~ .img-container #mem1,
+#mem2:checked ~ .img-container #mem2,
+#mem3:checked ~ .img-container #mem3,
+#mem4:checked ~ .img-container #mem4 {
+    display: block;
+}
