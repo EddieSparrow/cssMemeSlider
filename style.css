@@ -1,3 +1,7 @@
+* {
+    outline: 1px solid red !important;
+}
+
 body {
     background-color: rgb(37, 40, 42);
 }
@@ -8,45 +12,20 @@ body {
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-}
-
-.img {
-    display: none;
-    border-radius: 1em;
-}
-
-/* .button {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    background-color: rgb(43, 183, 226);
-    border: none;
-    cursor: pointer;
-} */
-
-/* .button:hover {
-    background-color: rgb(255, 255, 255);
-} */
-
-span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    display: none;
-    color: white;
+    max-width: 32em;
 }
 
 .text-container {
     height: auto;
 }
 
-/* .mem-buttons {
-    box-sizing: border-box;
-    display: flex;
-    height: auto;
-    align-items: center;
-} */
+.text-container #mem1,
+.text-container #mem2,
+.text-container #mem3,
+.text-container #mem4 {
+    display: none;
+    color: white;
+}
 
 .all-container {
     width: 100%;
@@ -62,32 +41,16 @@ span {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 525px;
+    max-width: 32em;
 }
 
-/* #mem1:checked ~ .container .all-container .mem-buttons label[for="mem1"],
-#mem2:checked ~ .container .all-container .mem-buttons label[for="mem2"],
-#mem3:checked ~ .container .all-container .mem-buttons label[for="mem3"],
-#mem4:checked ~ .container .all-container .mem-buttons label[for="mem4"] {
-    box-sizing: border-box;
-    background-color: rgb(37, 40, 42);
-    width: 1em;
-    height: 1em;
-    border: 0.2em solid rgb(43, 183, 226);
-} */
-
-/* #mem1:checked ~ .container .all-container .mem-buttons label[for="mem1"]:hover,
-#mem2:checked ~ .container .all-container .mem-buttons label[for="mem2"]:hover,
-#mem3:checked ~ .container .all-container .mem-buttons label[for="mem3"]:hover,
-#mem4:checked ~ .container .all-container .mem-buttons label[for="mem4"]:hover {
-    border: 0.2em solid rgb(255, 255, 255);
-} */
-
-#mem1:checked ~ .img-container #mem1,
-#mem2:checked ~ .img-container #mem2,
-#mem3:checked ~ .img-container #mem3,
-#mem4:checked ~ .img-container #mem4 {
-    display: block;
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #mem1:checked ~ .container .all-container .text-container #mem1,
@@ -95,16 +58,12 @@ span {
 #mem3:checked ~ .container .all-container .text-container #mem3,
 #mem4:checked ~ .container .all-container .text-container #mem4 {
     display: block;
+    animation: fadeInOut 1s;
 }
 
 .mem-radio {
     display: none;
 }
-
-
-
-
-/* ТЕСТ */
 
 .mem-buttons {
     box-sizing: border-box;
@@ -120,7 +79,6 @@ span {
     padding: 0.5em;
     width: 1em;
     height: 1em;
-    align-items: center;
 }
 
 .button:hover .test {
@@ -137,7 +95,6 @@ span {
     background-color: rgb(43, 183, 226);
     border: none;
     cursor: pointer;
-    flex: 1;
 }
 
 #mem1:checked ~ .container .all-container .mem-buttons label[for="mem1"] .test ,
@@ -158,3 +115,39 @@ span {
     border: 0.2em solid rgb(255, 255, 255);
 }
 
+.img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 1em;
+}
+
+#mem1:checked ~ .img-container #mem1,
+#mem2:checked ~ .img-container #mem2,
+#mem3:checked ~ .img-container #mem3,
+#mem4:checked ~ .img-container #mem4 {
+    display: block;
+    animation: fadeInOut 1s;
+}
+
+#mem1:not(:checked) ~ .img-container #mem1,
+#mem2:not(:checked) ~ .img-container #mem2,
+#mem3:not(:checked) ~ .img-container #mem3,
+#mem4:not(:checked) ~ .img-container #mem4 {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .all-container {
+        flex-direction: column-reverse;
+    }
+    
+    .mem-buttons {
+        margin-bottom: 1em;
+    }
+
+    body {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
