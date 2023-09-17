@@ -1,9 +1,7 @@
-/* * {
-    outline: 1px solid red !important;
-} */
-
 body {
     background-color: rgb(37, 40, 42);
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .meme-slider {
@@ -146,8 +144,7 @@ body {
         margin-bottom: 1em;
     }
 
-    body {
-        margin-left: 2em;
-        margin-right: 2em;
+    .text-container {
+        align-self: flex-start;
     }
-}
+}    
